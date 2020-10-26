@@ -11,7 +11,7 @@ struct Item {
 
 struct Order {
   std::string employee;
-  std::vector<std::pair<std::string, std::string>> items;
+  std::vector<std::pair<std::string, std::string> > items;
 };
 
 struct Bakery {
