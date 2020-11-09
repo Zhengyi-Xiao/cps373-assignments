@@ -34,7 +34,7 @@ std::vector<std::string> load_data(std::string filepath) {
 void handle_request(tcp::acceptor& acceptor,
                     const std::vector<std::string>& msgs) {
   acceptor.async_accept([&](std::error_code ec, tcp::socket&& socket) {
-    std::bernoulli_distribution loss_dist(0.0);
+    std::bernoulli_distribution loss_dist(0.1);
     std::normal_distribution<> delay_dist{250, 150};
     std::vector<std::thread> threads;
     std::vector<std::pair<sc::milliseconds, uint16_t>> delays;
